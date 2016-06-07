@@ -16,22 +16,25 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/Questionario")
 public class Questionario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Questionario() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public Questionario() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+		// response.getWriter().append("Served at:
+		// ").append(request.getContextPath());
+
 		try {
 			HttpSession session = request.getSession();
 
@@ -44,7 +47,65 @@ public class Questionario extends HttpServlet {
 
 				request.getAttribute("usr");
 
-				out.println("\n\nLogado como " + name + "!");
+				out.println("<!DOCTYPE html>");
+				out.println("<html>");
+				out.println("<meta charset=\"UTF-8\">");
+				out.println("<head>");
+				out.println("<title>DSW 01</title>");
+				out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/login.css\">");
+				out.println("</head>");
+				out.println("<body>");
+				out.println("<div class=\"index\">");
+				out.println("<div>");
+				out.println("<h1>Questionário</h1>");
+				out.println("<br>");
+				out.println("<br>");
+				out.println("<form action=\"/project01-dsw/Login\" method=\"POST\">");
+				out.println("Qual a linguagem de programação preferida? <select>");
+				out.println("<option value=\"C++\">C++</option>");
+				out.println("<option value=\"C\">C</option>");
+				out.println("<option value=\"C#\">C#</option>");
+				out.println("<option value=\"JAVA\">JAVA</option>");
+				out.println("<option value=\"JAVASCRIPT\">JAVASCRIPT</option>");
+				out.println("<option value=\"PHP\">PHP</option>");
+				out.println("<option value=\"ANDROID\">ANDROID</option>");
+				out.println("</select>");
+				out.println("<br>");
+				out.println("<br>");
+				out.println("Quais linguagens de programação você trabalhou? </br>");
+				out.println("<input type=\"checkbox\" name=\"l1\" value=\"estruturado\">Estruturado<br>");
+				out.println("<input type=\"checkbox\" name=\"l2\" value=\"oo\">Orientado a objetos<br>");
+				out.println("<input type=\"checkbox\" name=\"l3\" value=\"funcional\">Funcional<br>");
+				out.println("<input type=\"checkbox\" name=\"l4\" value=\"aspectos\">Aspectos<br>");
+				out.println();
+				out.println("<br>");
+				out.println("<br>");
+				out.println();
+				out.println("Quantos anos você possui de experiência? <input type=\"text\" value=\"\">");
+				out.println();
+				out.println("<br>");
+				out.println("<br>");
+				out.println("Possui alguma certificação?");
+				out.println("<br><input type=\"radio\" name=\"certificacao\" value=\"sim\">Sim <br>");
+				out.println("<input type=\"radio\" name=\"certificacao\" value=\"nao\">Não <br>");
+				out.println();
+				out.println("<br>");
+				out.println("<br>");
+				out.println();
+				out.println("Descreva suas principais habilidades:");
+				out.println("<br>");
+				out.println("<textarea rows=\"3\" cols=\"70\" maxlength=\"500\"></textarea>");
+				out.println();
+				out.println("<br>");
+				out.println("<br>");
+				out.println();
+				out.println("<input type=\"submit\" value=\"Enviar\">");
+				out.println("</form>");
+				out.println("</div>");
+				out.println("</div>");
+				out.println();
+				out.println("</body>");
+				out.println("</html>");
 				out.close();
 			}
 		} catch (Exception e) {
@@ -54,9 +115,11 @@ public class Questionario extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
