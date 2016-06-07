@@ -17,18 +17,10 @@ import javax.servlet.http.HttpSession;
 public class Questionario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public Questionario() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -41,72 +33,73 @@ public class Questionario extends HttpServlet {
 			String name = (String) session.getAttribute("jho");
 
 			if (!name.equals(null)) {
-				response.setContentType("text/html");
+				//response.setContentType("text/html");
+				response.sendRedirect("/project01-dsw/questionario.html");
 
-				PrintWriter out = response.getWriter();
+//				PrintWriter out = response.getWriter();
 
-				request.getAttribute("usr");
+//				request.getAttribute("usr");
 
-				out.println("<!DOCTYPE html>");
-				out.println("<html>");
-				out.println("<meta charset=\"UTF-8\">");
-				out.println("<head>");
-				out.println("<title>DSW 01</title>");
-				out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/login.css\">");
-				out.println("</head>");
-				out.println("<body>");
-				out.println("<div class=\"index\">");
-				out.println("<div>");
-				out.println("<h1>Questionário</h1>");
-				out.println("<br>");
-				out.println("<br>");
-				out.println("<form action=\"/project01-dsw/Login\" method=\"POST\">");
-				out.println("Qual a linguagem de programação preferida? <select>");
-				out.println("<option value=\"C++\">C++</option>");
-				out.println("<option value=\"C\">C</option>");
-				out.println("<option value=\"C#\">C#</option>");
-				out.println("<option value=\"JAVA\">JAVA</option>");
-				out.println("<option value=\"JAVASCRIPT\">JAVASCRIPT</option>");
-				out.println("<option value=\"PHP\">PHP</option>");
-				out.println("<option value=\"ANDROID\">ANDROID</option>");
-				out.println("</select>");
-				out.println("<br>");
-				out.println("<br>");
-				out.println("Quais linguagens de programação você trabalhou? </br>");
-				out.println("<input type=\"checkbox\" name=\"l1\" value=\"estruturado\">Estruturado<br>");
-				out.println("<input type=\"checkbox\" name=\"l2\" value=\"oo\">Orientado a objetos<br>");
-				out.println("<input type=\"checkbox\" name=\"l3\" value=\"funcional\">Funcional<br>");
-				out.println("<input type=\"checkbox\" name=\"l4\" value=\"aspectos\">Aspectos<br>");
-				out.println();
-				out.println("<br>");
-				out.println("<br>");
-				out.println();
-				out.println("Quantos anos você possui de experiência? <input type=\"text\" value=\"\">");
-				out.println();
-				out.println("<br>");
-				out.println("<br>");
-				out.println("Possui alguma certificação?");
-				out.println("<br><input type=\"radio\" name=\"certificacao\" value=\"sim\">Sim <br>");
-				out.println("<input type=\"radio\" name=\"certificacao\" value=\"nao\">Não <br>");
-				out.println();
-				out.println("<br>");
-				out.println("<br>");
-				out.println();
-				out.println("Descreva suas principais habilidades:");
-				out.println("<br>");
-				out.println("<textarea rows=\"3\" cols=\"70\" maxlength=\"500\"></textarea>");
-				out.println();
-				out.println("<br>");
-				out.println("<br>");
-				out.println();
-				out.println("<input type=\"submit\" value=\"Enviar\">");
-				out.println("</form>");
-				out.println("</div>");
-				out.println("</div>");
-				out.println();
-				out.println("</body>");
-				out.println("</html>");
-				out.close();
+//				out.println("<!DOCTYPE html>");
+//				out.println("<html>");
+//				out.println("<meta charset=\"UTF-8\">");
+//				out.println("<head>");
+//				out.println("<title>DSW 01</title>");
+//				out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"css/login.css\">");
+//				out.println("</head>");
+//				out.println("<body>");
+//				out.println("<div class=\"index\">");
+//				out.println("<div>");
+//				out.println("<h1>Questionário</h1>");
+//				out.println("<br>");
+//				out.println("<br>");
+//				out.println("<form action=\"project01-dsw/Cadastro\" method=\"POST\">");
+//				out.println("Qual a linguagem de programação preferida? <select name=\"linguagem\">");
+//				out.println("<option value=\"C++\">C++</option>");
+//				out.println("<option value=\"C\">C</option>");
+//				out.println("<option value=\"C#\">C#</option>");
+//				out.println("<option value=\"JAVA\">JAVA</option>");
+//				out.println("<option value=\"JAVASCRIPT\">JAVASCRIPT</option>");
+//				out.println("<option value=\"PHP\">PHP</option>");
+//				out.println("<option value=\"ANDROID\">ANDROID</option>");
+//				out.println("</select>");
+//				out.println("<br>");
+//				out.println("<br>");
+//				out.println("Quais paradigmas de programação você trabalhou? </br>");
+//				out.println("<input type=\"checkbox\" name=\"paradigmas\" value=\"estruturado\">Estruturado<br>");
+//				out.println("<input type=\"checkbox\" name=\"paradigmas\" value=\"oo\">Orientado a objetos<br>");
+//				out.println("<input type=\"checkbox\" name=\"paradigmas\" value=\"funcional\">Funcional<br>");
+//				out.println("<input type=\"checkbox\" name=\"paradigmas\" value=\"aspectos\">Aspectos<br>");
+//				out.println();
+//				out.println("<br>");
+//				out.println("<br>");
+//				out.println();
+//				out.println("Quantos anos você possui de experiência? <input type=\"text\" name=\"anos_exp\">");
+//				out.println();
+//				out.println("<br>");
+//				out.println("<br>");
+//				out.println("Possui alguma certificação?");
+//				out.println("<br><input type=\"radio\" name=\"certificacao\" value=\"sim\">Sim <br>");
+//				out.println("<input type=\"radio\" name=\"certificacao\" value=\"nao\">Não <br>");
+//				out.println();
+//				out.println("<br>");
+//				out.println("<br>");
+//				out.println();
+//				out.println("Descreva suas principais habilidades:");
+//				out.println("<br>");
+//				out.println("<textarea name=\"habilidades\" rows=\"3\" cols=\"70\" maxlength=\"500\"></textarea>");
+//				out.println();
+//				out.println("<br>");
+//				out.println("<br>");
+//				out.println();
+//				out.println("<input type=\"submit\" value=\"Enviar\">");
+//				out.println("</form>");
+//				out.println("</div>");
+//				out.println("</div>");
+//				out.println();
+//				out.println("</body>");
+//				out.println("</html>");
+//				out.close();
 			}
 		} catch (Exception e) {
 			response.sendRedirect("/project01-dsw/index.html");
@@ -114,13 +107,8 @@ public class Questionario extends HttpServlet {
 
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

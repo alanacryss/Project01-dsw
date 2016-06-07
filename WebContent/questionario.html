@@ -15,8 +15,8 @@
 			<br>
 			<br>
 			
-			<form action="/project01-dsw/Login" method="POST">
-				Qual a linguagem de programação preferida? <select>
+			<form action="/project01-dsw/Cadastro" method="POST">
+				Qual a linguagem de programação preferida? <select name="linguagem">
 					<option value="C++">C++</option>
 					<option value="C">C</option>
 					<option value="C#">C#</option>
@@ -28,17 +28,17 @@
 				
 				<br>
 				<br>
-				Quais linguagens de programação você trabalhou? </br> 
+				Com quais paradigmas de programação você trabalhou? </br> 
 				
-				<input type="checkbox" name="l1" value="estruturado">Estruturado<br>
-				<input type="checkbox" name="l2" value="oo">Orientado a objetos<br>
-				<input type="checkbox" name="l3" value="funcional">Funcional<br>
-				<input type="checkbox" name="l4" value="aspectos">Aspectos<br>
+				<input type="checkbox" name="paradigmas" value="estruturado">Estruturado<br>
+				<input type="checkbox" name="paradigmas" value="orientado">Orientado a objetos<br>
+				<input type="checkbox" name="paradigmas" value="funcional">Funcional<br>
+				<input type="checkbox" name="paradigmas" value="aspectos">Aspectos<br>
 
 				<br>
 				<br>
 
-				Quantos anos você possui de experiência? <input type="text" value="">
+				Quantos anos você possui de experiência? <input type="text" name="anos-exp" />
 				
 				<br>
 				<br>
@@ -52,7 +52,7 @@
 				
 				Descreva suas principais habilidades:
 				<br>
-				<textarea rows="3" cols="70" maxlength="500"></textarea>
+				<textarea name="habilidades" rows="3" cols="70" maxlength="500"></textarea>
 				
 				<br>
 				<br>
