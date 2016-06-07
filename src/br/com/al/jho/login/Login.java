@@ -30,14 +30,14 @@ public class Login extends HttpServlet {
 			throws ServletException, IOException {
 
 		String user = request.getParameter("usr");
-		String pass = request.getParameter("pass");
+		String email = request.getParameter("email");
 
 		String button = (String) request.getAttribute("logout");
 
-		if (user.equals("jho@email.com") && pass.equals("jho123")) {
+		if (user.equals("jho") && email.equals("jho@email.com")) {
 			HttpSession session = request.getSession();
 			session.setAttribute("jho", "jho123");
-			response.sendRedirect("/ServerInit/Welcome");
+			response.sendRedirect("/project01-dsw/Questionario");
 		} else {
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Error");
 			dispatcher.forward(request, response);

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+<title>DSW 01</title>
+<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+
+<body>
+
+	<div class="index">
+		<div>
+			<h1>Questionário</h1>
+			
+			<br>
+			<br>
+			
+			<form action="/project01-dsw/Login" method="POST">
+				Qual a linguagem de programação preferida? <select>
+					<option value="C++">C++</option>
+					<option value="C">C</option>
+					<option value="C#">C#</option>
+					<option value="JAVA">JAVA</option>
+					<option value="JAVASCRIPT">JAVASCRIPT</option>
+					<option value="PHP">PHP</option>
+					<option value="ANDROID">ANDROID</option>
+				</select> 
+				
+				<br>
+				<br>
+				Quais linguagens de programação você trabalhou? </br> 
+				
+				<input type="checkbox" name="l1" value="estruturado">Estruturado<br>
+				<input type="checkbox" name="l2" value="oo">Orientado a objetos<br>
+				<input type="checkbox" name="l3" value="funcional">Funcional<br>
+				<input type="checkbox" name="l4" value="aspectos">Aspectos<br>
+
+				<br>
+				<br>
+
+				Quantos anos você possui de experiência? <input type="text" value="">
+				
+				<br>
+				<br>
+				
+				Possui alguma certificação? 
+				<input type="radio" name="certificacao" value="sim">Sim <br>
+				<input type="radio" name="certificacao" value="nao">Não <br>
+				
+				<br>
+				<br>
+				
+				Descreva suas principais habilidades:
+				<br>
+				<textarea rows="3" cols="70" maxlength="500"></textarea>
+				
+				<br>
+				<br>
+				
+				<input type="submit" value="Enviar">
+			</form>
+		</div>
+
+	</div>
+
+</body>
