@@ -1,0 +1,25 @@
+html, body {
+	height: 100em;
+	min-height: 100em;
+}
+
+body {
+	font: 1em arial;
+	color: rgba(0, 0, 0, .7);
+}
+
+.index {
+	height: 10em;
+	min-height: 40em;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+.index div{
+	padding: 4em;
+	border: 1px solid rgba(0, 0, 0, .3)
+}
