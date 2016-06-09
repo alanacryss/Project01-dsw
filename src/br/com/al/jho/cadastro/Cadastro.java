@@ -40,6 +40,7 @@ public class Cadastro extends HttpServlet {
 		String param = "";
 		
 		Connection connection = ConnectionFactory.getConnection();
+		System.out.println("Conexão aberta!");
 		
 		for (int i = 0; i < paradigmas.length; i++) {
 			param += paradigmas[i] + "; ";
