@@ -26,10 +26,10 @@ public class Cadastro extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		//doGet(request, response);
 		
 		String linguagem = request.getParameter("linguagem");
-		String paradigmas = request.getParameter("paradigmas");
+		String[] paradigmas = request.getParameterValues("paradigmas");
 		String anosExp = request.getParameter("anos_exp");
 		String cert = request.getParameter("certificacao");
 		String habil = request.getParameter("habilidades");
@@ -37,13 +37,19 @@ public class Cadastro extends HttpServlet {
 		String sql = "insert into cadastro (linguagem,paradigmas,habilidades,anos_exp,certificacao) " +
 				     "values (?,?,?,?,?)";
 		
+		String param = "";
+		
 		Connection connection = ConnectionFactory.getConnection();
+		
+		for (int i = 0; i < paradigmas.length; i++) {
+			param += paradigmas[i] + "; ";
+		}
 		
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			
 			stmt.setString(1, linguagem);
-			stmt.setString(2, paradigmas);
+			stmt.setString(2, param);
 			stmt.setString(3, habil);
 			stmt.setString(4, anosExp);
 			stmt.setString(5, cert);
