@@ -30,7 +30,7 @@ public class Cadastro extends HttpServlet {
 		
 		String linguagem = request.getParameter("linguagem");
 		String paradigmas = request.getParameter("paradigmas");
-		String anosExp = request.getParameter("anos_exp");
+		String anosExp = request.getParameter("anos-exp");
 		String cert = request.getParameter("certificacao");
 		String habil = request.getParameter("habilidades");
 		
@@ -38,6 +38,7 @@ public class Cadastro extends HttpServlet {
 				     "values (?,?,?,?,?)";
 		
 		Connection connection = ConnectionFactory.getConnection();
+		System.out.println("Conexão aberta!");
 		
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
