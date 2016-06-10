@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -61,6 +62,9 @@ public class Cadastro extends HttpServlet {
 			connection.close();
 			
 			System.out.println("Dados inseridos!");
+			
+			RequestDispatcher d = getServletContext().getRequestDispatcher("/Sucesso");
+			d.forward(request, response);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
