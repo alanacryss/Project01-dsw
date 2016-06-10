@@ -67,7 +67,7 @@ public class Questionario extends HttpServlet {
 				out.println("<br>");
 				out.println("Quais paradigmas de programação você trabalhou? </br>");
 				out.println("<input type=\"checkbox\" name=\"paradigmas\" value=\"estruturado\">Estruturado<br>");
-				out.println("<input type=\"checkbox\" name=\"paradigmas\" value=\"oo\">Orientado a objetos<br>");
+				out.println("<input type=\"checkbox\" name=\"paradigmas\" value=\"orientado\">Orientado a objetos<br>");
 				out.println("<input type=\"checkbox\" name=\"paradigmas\" value=\"funcional\">Funcional<br>");
 				out.println("<input type=\"checkbox\" name=\"paradigmas\" value=\"aspectos\">Aspectos<br>");
 				out.println();
