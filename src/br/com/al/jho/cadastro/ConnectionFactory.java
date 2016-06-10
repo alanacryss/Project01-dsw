@@ -8,7 +8,7 @@ public class ConnectionFactory {
 	
 	private static String pathdb = "jdbc:postgresql://localhost:5432/dbproject";
 	private static String user = "postgres";
-	private static String pass = "suasenha";
+	private static String pass = "asdf1357";
 
 	public static Connection getConnection() {
 		try {
