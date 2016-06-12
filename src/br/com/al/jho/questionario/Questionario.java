@@ -34,7 +34,6 @@ public class Questionario extends HttpServlet {
 
 			if (!name.equals(null)) {
 				response.setContentType("text/html");
-				// response.sendRedirect("/project01-dsw/questionario.html");
 
 				PrintWriter out = response.getWriter();
 
@@ -94,6 +93,8 @@ public class Questionario extends HttpServlet {
 				out.println();
 				out.println("<input type=\"submit\" value=\"Enviar\">");
 				out.println("</form>");
+				out.println("<br>");
+				out.println("<a href=\"/project01-dsw/UserCreate\">Criar usuário</a>");
 				out.println("</div>");
 				out.println("</div>");
 				out.println();

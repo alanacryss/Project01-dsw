@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Constants.Constants;
+
 /**
  * Servlet implementation class Cadastro
  */
@@ -28,16 +30,12 @@ public class Cadastro extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//doGet(request, response);
 		
 		String linguagem = request.getParameter("linguagem");
 		String[] paradigmas = request.getParameterValues("paradigmas");
 		String anosExp = request.getParameter("anos_exp");
 		String cert = request.getParameter("certificacao");
 		String habil = request.getParameter("habilidades");
-		
-		String sql = "insert into cadastro (linguagem,paradigmas,habilidades,anos_exp,certificacao) " +
-				     "values (?,?,?,?,?)";
 		
 		String param = "";
 		
@@ -49,7 +47,7 @@ public class Cadastro extends HttpServlet {
 		}
 		
 		try {
-			PreparedStatement stmt = connection.prepareStatement(sql);
+			PreparedStatement stmt = connection.prepareStatement(Constants.SQL);
 			
 			stmt.setString(1, linguagem);
 			stmt.setString(2, param);
