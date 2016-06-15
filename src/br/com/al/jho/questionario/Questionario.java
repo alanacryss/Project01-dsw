@@ -30,7 +30,7 @@ public class Questionario extends HttpServlet {
 		try {
 			HttpSession session = request.getSession();
 
-			String name = (String) session.getAttribute("jho");
+			String name = (String) session.getAttribute("usr");
 
 			if (!name.equals(null)) {
 				response.setContentType("text/html");
