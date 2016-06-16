@@ -53,6 +53,7 @@ public class Download extends HttpServlet {
 		session = request.getSession(true);
 		//tentando pegar o usuario e email da sessão
 		String emailUsr = (String) session.getAttribute("email");
+		String receb = "";
 		
 		try {
 			PreparedStatement stmt = connection.prepareStatement(Constants.SQLQUERY);
@@ -70,6 +71,10 @@ public class Download extends HttpServlet {
 				email = result.getString("email");
 			}
 			
+			receb = id + "\n" + linguagem +
+					"\n" + paradigmas + "\n" + habilidades + "\n"
+					+ certificacao + "\n" + anos + "\n" + email + "\n";
+			
 			result.close();
 			stmt.close();
 			
@@ -85,7 +90,12 @@ public class Download extends HttpServlet {
 		//while()
 		out.write(id.charAt(0));
 		
-		out.flush();
+		int cont = 0;
+		while(cont < receb.length()){
+			out.write(receb.charAt(cont));
+		}
+		
+		//out.flush();
 		out.close();
 		
 		
