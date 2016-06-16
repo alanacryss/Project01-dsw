@@ -41,7 +41,7 @@ public class Download extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 
 	}
 
@@ -59,8 +59,11 @@ public class Download extends HttpServlet {
 			PreparedStatement stmt = connection.prepareStatement(Constants.SQLQUERY);
 			
 			//stmt.executeQuery(emailUsr);
-			ResultSet result = stmt.executeQuery(emailUsr);
+			ResultSet result = stmt.executeQuery();
 			
+			//result.get
+			
+			System.out.println("Começou!");
 			while (result.next()){				
 				id = result.getString("id");
 				linguagem = result.getString("linguagem");
@@ -92,9 +95,9 @@ public class Download extends HttpServlet {
 		
 		int cont = 0;
 		while(cont < receb.length()){
-			out.write(receb.charAt(cont));
+			out.write(receb.charAt(cont++));
 		}
-		
+		System.out.println("Terminou!");
 		//out.flush();
 		out.close();
 		

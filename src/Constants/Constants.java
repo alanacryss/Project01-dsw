@@ -8,7 +8,7 @@ public class Constants {
 	public static String SQLLOGIN = "insert into login (name, email) " +
 		     "values (?,?)";
 	
-	public static String SQLQUERY = "select * from cadastro where email = ?";
+	public static String SQLQUERY = "select * from cadastro";
 	
 	public static String SQLQUERYLOG = "select * from login";
 }
