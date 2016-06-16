@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -51,6 +53,11 @@ public class Download extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		session = request.getSession(true);
+		
+		response.setContentType("binary/txt");
+		response.setHeader("Content-Disposition", "attachment; filename=questionario.txt");
+
+		
 		//tentando pegar o usuario e email da sessão
 		String emailUsr = (String) session.getAttribute("email");
 		String receb = "";
@@ -59,6 +66,7 @@ public class Download extends HttpServlet {
 			PreparedStatement stmt = connection.prepareStatement(Constants.SQLQUERY);
 			
 			//stmt.executeQuery(emailUsr);
+			//stmt.setString(0, emailUsr);
 			ResultSet result = stmt.executeQuery();
 			
 			//result.get
@@ -87,21 +95,21 @@ public class Download extends HttpServlet {
 		}
 		
 		File file = new File("questionario.txt");
+		Path path = file.toPath();
 		
-		OutputStream out = new FileOutputStream(file);
-		
-		//while()
-		out.write(id.charAt(0));
-		
+		OutputStream out = response.getOutputStream();//new FileOutputStream(file);
+	
 		int cont = 0;
 		while(cont < receb.length()){
 			out.write(receb.charAt(cont++));
 		}
+		
+		Files.copy(path, out);
+		
 		System.out.println("Terminou!");
-		//out.flush();
+		out.flush();
 		out.close();
-		
-		
+			
 		try {
 			connection.close();
 		} catch (SQLException e) {
