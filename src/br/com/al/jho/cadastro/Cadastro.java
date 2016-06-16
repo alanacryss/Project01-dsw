@@ -66,7 +66,7 @@ public class Cadastro extends HttpServlet {
 			stmt.setString(3, habil);
 			stmt.setString(4, anosExp);
 			stmt.setString(5, cert);
-			stmt.setString(6, email);
+			//stmt.setString(6, email);
 
 			stmt.execute();
 

@@ -88,15 +88,35 @@ public class Download extends HttpServlet {
 		OutputStream out = new FileOutputStream(file);
 		
 		//while()
-		out.write(id.charAt(0));
+		//out.write(id.charAt(0));
 		
-		int cont = 0;
-		while(cont < receb.length()){
-			out.write(receb.charAt(cont));
+		PreparedStatement stmt;
+		try {
+			stmt = connection.prepareStatement(Constants.SQLQUERY);
+			
+			//stmt.executeQuery(emailUsr);
+			ResultSet result = stmt.executeQuery();
+			
+			while (result.next()) {
+				
+				for (int i = 0; i < receb.length(); i++) {
+					out.write(receb.charAt(i + 1));
+				}
+			}
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 		
-		//out.flush();
-		out.close();
+		
+		
+//		int cont = 0;
+//		while(cont < receb.length()){
+//			out.write(receb.charAt(cont));
+//		}
+//		
+//		//out.flush();
+//		out.close();
 		
 		
 		try {
