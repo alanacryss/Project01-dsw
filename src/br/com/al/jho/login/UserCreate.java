@@ -23,24 +23,16 @@ import br.com.al.jho.cadastro.ConnectionFactory;
 public class UserCreate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public UserCreate() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		HttpSession session = request.getSession();
 
-		if (session.getAttribute("jho") != null) {
+		if (session.getAttribute("jho") == null) {
 			response.setContentType("text/html");
 
 			PrintWriter out = response.getWriter();
@@ -71,15 +63,11 @@ public class UserCreate extends HttpServlet {
 		}
 		
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// doGet(request, response);
+		doGet(request, response);
 		
 		Connection connection = ConnectionFactory.getConnection();
 		
