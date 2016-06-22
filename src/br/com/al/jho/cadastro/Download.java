@@ -64,14 +64,9 @@ public class Download extends HttpServlet {
 		
 		try {
 			PreparedStatement stmt = connection.prepareStatement(Constants.SQLQUERY);
-			
-			//stmt.executeQuery(emailUsr);
-			//stmt.setString(0, emailUsr);
+
 			ResultSet result = stmt.executeQuery();
 			
-			//result.get
-			
-			System.out.println("Começou!");
 			while (result.next()){				
 				id = result.getString("id");
 				linguagem = result.getString("linguagem");

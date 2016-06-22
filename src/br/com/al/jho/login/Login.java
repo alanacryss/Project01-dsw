@@ -50,13 +50,14 @@ public class Login extends HttpServlet {
 
 		PreparedStatement stmt;
 		try {
-			stmt = conexao.prepareStatement(Constants.SQLQUERYLOG);
-
+			stmt = conexao.prepareStatement(Constants.SQLQUERYLOG + "email"); //"\"jho@email.com\""
+			
 			ResultSet result = stmt.executeQuery();
-
+			
+			//System.out.println(result.getString("email"));
 			while (result.next()) {
 				
-				if (result.getString("name").equals("jardell") && result.getString("email").equals("dell@email.com")) {
+				if (result.getString("name").equals(user) && result.getString("email").equals(email)) {
 					userBd = result.getString("name");
 					emailBd = result.getString("email");
 				}

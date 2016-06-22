@@ -10,5 +10,5 @@ public class Constants {
 	
 	public static String SQLQUERY = "select * from cadastro";
 	
-	public static String SQLQUERYLOG = "select * from login";
+	public static String SQLQUERYLOG = "select name, email from login where email = ";
 }
